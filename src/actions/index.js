@@ -1,16 +1,8 @@
-let nextTodoId = 0;
 
-
-export const addTodo = (text) =>{
+export const addTodo = (data) =>{
     return{
     type: 'ADD_TODO',
-    id: nextTodoId++,
-    text
+    city: data.city,
+    list: data.list
+    }
   }
-  }
-export const Delete = (num) =>{
-  return{
-    type: 'DELETE',
-    data: num
-  }
-}

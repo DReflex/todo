@@ -1,0 +1,47 @@
+.box{
+  margin:auto;
+  padding: 100px 50px;
+  width:80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  background-image: url(https://visoko.co.ba/wp-content/uploads/2017/04/zenica.jpg);
+  background-size: cover;
+  background-position: bottom;
+}
+.box1{
+  background-color: rgba(249, 249, 249, 0.53);
+  border-radius: 20px;
+
+}
+.img{
+  width:60px;
+  height:60px;
+}
+.text{
+  font-size: 25px;
+  font-weight: 500;
+}
+.lists{
+  margin:auto;
+  display: flex;
+  padding: 10px 10px;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.city{
+  text-align: center;
+}
+.single li{
+  list-style-type: none;
+  font-size: 16px;
+}
+@media screen and (max-width: 425px){
+  .img{
+    width:0px;
+    height:0px;
+    margin:0;
+  }
+  .box{width:100%}
+}

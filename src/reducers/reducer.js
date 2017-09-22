@@ -1,18 +1,20 @@
 
-const stateInit = []
+const stateInit = {city: {name:""},
+                   list: [{dt_txt: "",
+                           main:{temp:Number,
+                                 humidity: Number},
+                           weather:[{description: ""}]
+                           }]}
 const todos = (state = stateInit, action) => {
   switch (action.type) {
     case 'ADD_TODO':
-      return [
+      return {
         ...state,
-        {
-          id: action.id,
-          text: action.text,
+          city: action.city,
+          list: action.list,
         }
-      ]
-      case 'DELETE':
-      const commentId = action.data;
-      return state.filter(comment => comment.id !== commentId);
+
+
 
       default:
       return state
