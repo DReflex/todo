@@ -1,12 +1,19 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const TodoSchema = new Schema ({
-    data:[
-      {text:String}
-    ]
+const FacebookSchema = new Schema ({
+    name:String,
+    id:Number,
+    image:String,
+    about:String,
+    fan_count:Number
 
 });
-const Todo = mongoose.model('todo', TodoSchema);
+const Facebook = mongoose.model('facebook', FacebookSchema);
 
-module.exports = Todo;
+module.exports = Facebook;
+/*
+Facebook.create({category: 1, title: 'Minion'}, function(err, doc) {
+    // At this point the jobs collection is created.
+});
+*/

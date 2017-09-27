@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 const app =express();
 app.set('port', (process.env.PORT || 4000));
-var promise = mongoose.connect('mongodb://localhost/todos', {
+var promise = mongoose.connect('mongodb://localhost/facebook', {
   useMongoClient: true,
   /* other options */
 });

@@ -5,6 +5,7 @@
   "dependencies": {
     "body-parser": "^1.18.1",
     "express": "^4.15.4",
+    "fbgraph": "^1.4.1",
     "mongoose": "^4.11.11",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
