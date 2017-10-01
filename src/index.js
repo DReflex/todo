@@ -9,6 +9,7 @@ import todoApp from './reducers'
 import thunk from 'redux-thunk'
 import { loadState,saveState } from './localStorage'
 import throttle from 'lodash/throttle'
+import './index.css'
 
  const presistedState = loadState()
  const middleware = applyMiddleware(thunk)

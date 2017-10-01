@@ -24,7 +24,7 @@ componentDidMount(){
   .then(res => res.json())
   .then(data => data.results.map((res) =>{
     this.state.name.push(res.name)
-    console.log(this.state.name)
+    return console.log(this.state.name)
   })
   )
   .catch(err => console.log(err))
@@ -70,7 +70,7 @@ componentDidMount(){
   render(){
     return(
       <div><h1>Create facebook database</h1>
-      //bug free click
+      {/* bug free click*/}
       <button onClick={this.facebook} >test one</button>
       </div>
     )

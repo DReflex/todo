@@ -1,10 +1,15 @@
 
-const stateInit = {city: {name:""},
-                   list: [{dt_txt: "",
-                           main:{temp:Number,
-                                 humidity: Number},
-                           weather:[{description: ""}]
-                           }]}
+const stateInit = {
+  city: {name:""},
+  list: [{
+    dt_txt: "",
+    main:{
+      temp:Number,
+      humidity: Number
+        },
+      weather:[{description: ""}]
+ }]
+}
 const todos = (state = stateInit, action) => {
   switch (action.type) {
     case 'ADD_TODO':

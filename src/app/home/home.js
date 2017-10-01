@@ -1,25 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import './home.css'
 import { addTodo } from '../../actions/index'
+import  Todo  from '../todo/todo'
 const uuidv4 = require('uuid/v4');
 //weather api key a4df27ba08a0807dfef73c5a316f5712
-/*
 
-     const data = {
-       name: "name",
-       city: {id: "hello", name: "this is name"},
-       list:[{dt:1111},{dt:2222},{dt:3333},{dt:4444},{dt:5555},{dt:6666},{dt:7777},{dt:8888}]
-     }
-     const newData = {
-       city: data.city,
-       list: data.list.slice(0, 4)
-     };
-     console.log(newData)
-     this.props.dispatch(addTodo(newData))
-
-*/
 class Home extends React.Component {
   constructor(){
     super();
@@ -45,7 +31,8 @@ class Home extends React.Component {
     return (
       <div>
         <div className="box">
-        <div className="box1"><h1 className="city">{this.props.todos.city.name}</h1>
+          </div>
+        <div className="box1">
         <div className="lists">
             {this.props.todos.list.map((data) =>{
               const time = data.dt_txt.split(' ').slice(1)
@@ -54,18 +41,17 @@ class Home extends React.Component {
       return  <ul className="single" key={uuidv4()}>
                 <li key={uuidv4()}>{time}</li>
                 <li key={uuidv4()}>{temp}<span>&#8451;</span></li>
-                <li key={uuidv4()}>{data.weather[0].description}</li>
-                <li key={uuidv4()}><img src={src} className="img img-responsive" /></li>
+                <li key={uuidv4()}><img src={src} alt="" className="img img-responsive" /></li>
 
               </ul>
             }
 
           )}
-          </div>
-          </div>
 
-        </div>
-        <button onClick={this.Fetch}>FetchData</button>
+          </div>
+          <button onClick={this.Fetch} >Update</button>
+          </div>
+            <Todo />
       </div>
     )
   }

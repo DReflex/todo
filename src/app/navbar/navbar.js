@@ -15,7 +15,7 @@ class Navbar extends React.Component{
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <Link className="navbar-brand" to="/">Voting App</Link>
+            <Link style={{fontSize:'15px'}} className="navbar-brand" to="/">Todo</Link>
           </div>
           <div className="collapse navbar-collapse" id="myNavbar">
             <ul className="nav navbar-nav navbar-right">

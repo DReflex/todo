@@ -1,22 +1,36 @@
 .box{
   margin:auto;
-  padding: 100px 50px;
-  width:80%;
+  padding: 180px 50px;
+  width:90%;
   display: flex;
   justify-content: center;
   flex-direction: row;
-  background-image: url(https://visoko.co.ba/wp-content/uploads/2017/04/zenica.jpg);
+  background-image: url(https://images3.alphacoders.com/677/677306.jpg);
   background-size: cover;
-  background-position: bottom;
+  background-position: top;
 }
 .box1{
-  background-color: rgba(249, 249, 249, 0.53);
+  width:40%;
+  margin:auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-top:-70px;
+  border-radius:5px;
+  border: 1px solid rgb(221, 221, 221);
+}
+.box1 button{
+  margin:auto;
+  display: flex;
+  justify-content: center;
   border-radius: 20px;
+  background-color: rgb(66, 37, 209);
+  color:white;
+  border:3px solid rgb(2, 2, 82);
+  font-weight: 700;
 
 }
 .img{
-  width:60px;
-  height:60px;
+  width:50px;
+  height:50px;
 }
 .text{
   font-size: 25px;
@@ -25,23 +39,33 @@
 .lists{
   margin:auto;
   display: flex;
-  padding: 10px 10px;
-  justify-content: flex-start;
+  padding-top: 5px;
+  justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
+  color:rgb(2, 4, 122)
 }
-.city{
-  text-align: center;
+.single{
+  border:1px solid rgb(221, 221, 221);
+  padding: 5px 5px;
+  margin:auto;
+  margin-bottom:5px;
+  background:rgba(112, 140, 221, 0.28);
+  border-radius: 5px;
+
 }
 .single li{
   list-style-type: none;
   font-size: 16px;
+
 }
 @media screen and (max-width: 425px){
   .img{
-    width:0px;
-    height:0px;
-    margin:0;
+    width:35px;
+    height:35px;
   }
   .box{width:100%}
+  .box1{
+    width:50%;
+  }
 }
