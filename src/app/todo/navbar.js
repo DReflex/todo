@@ -1,7 +1,8 @@
 import React from 'react';
 import './navbar.css'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { resetRedux } from '../../actions/index';
+import { createCoffie, resetRedux } from '../../actions/index';
 
 const color = {color:'white'}
 class Navbar extends React.Component{
@@ -11,9 +12,34 @@ class Navbar extends React.Component{
     this.onClick = this.onClick.bind(this)
     this.scrollToTop = this.scrollToTop.bind(this)
   }
-  onClick = () =>{
+  onClick = (query) =>{
     this.props.dispatch(resetRedux());
-    console.log('deleted')
+    fetch(`/api/facebook/${query}`).then(res => res.json())
+    .then(data => data.map((coffie) =>{
+      let newLocation
+      if(coffie.location !== undefined){
+         newLocation = `${coffie.location.street}, ${coffie.location.city}`
+      }else{
+         newLocation = "no location"
+      }
+      const newData = {
+        name:coffie.name,
+        id:coffie.id,
+        image:coffie.image,
+        about:coffie.about,
+        fan_count:coffie.fan_count,
+        events: coffie.events,
+        comments: coffie.comments,
+        location: newLocation
+
+      }
+      return this.props.dispatch(createCoffie(newData))
+
+    })
+  )
+  let exact = document.getElementById("todo-navbar").offsetTop
+  setTimeout(()=>window.scrollTo(0, exact), 1000)
+
   }
   scrollToTop = () =>{
     window.scrollTo(0, 0);
@@ -36,10 +62,11 @@ class Navbar extends React.Component{
                 <a style={color} className="dropdown-toggle" data-toggle="dropdown">Categories
                 <span className="caret"></span></a>
                 <ul className="dropdown-menu">
-                  <li onClick={this.onClick}><a >Bars and Pubs</a></li>
-                  <li><a >Hotels</a></li>
-                  <li ><a >Restaurants</a></li>
-                  <li ><a >Sports</a></li>
+                  <li onClick={()=> this.onClick('caffe')}><a>bars and pubs</a></li>
+                  <li onClick={()=> this.onClick('hotels')}><a >Hotels</a></li>
+                  <li onClick={()=> this.onClick('restaurants')} ><a >Restaurants</a></li>
+                  <li onClick={()=> this.onClick('sports')}><a >Sports</a></li>
+                  <li onClick={()=> this.onClick('shops')}><a >Shops</a></li>
                 </ul>
               </li>
               <li className="dropdown">

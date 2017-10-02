@@ -8,6 +8,13 @@ router.get('/facebook', function(req, res, next){
     res.send(result);
   }).catch(next);
 });
+//get type
+router.get('/facebook/:type', function(req, res, next){
+  Facebook.find({type: req.params.type})
+  .then(function(product){
+    res.send(product)
+  }).catch(next);
+});
 
 router.post('/facebook', function(req, res, next){
   console.log(req.body)

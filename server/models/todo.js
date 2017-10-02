@@ -6,7 +6,11 @@ const FacebookSchema = new Schema ({
     id:Number,
     image:String,
     about:String,
-    fan_count:Number
+    fan_count:Number,
+    location:{},
+    comments:[{}],
+    type:String,
+    events:[{}]
 
 });
 const Facebook = mongoose.model('facebook', FacebookSchema);

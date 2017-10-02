@@ -8,3 +8,8 @@
 Link .color{
   color:white !important;
 }
+@media screen and (max-width: 640px){
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+      color: #fff9f9;
+  }
+}
