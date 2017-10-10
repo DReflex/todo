@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import List from './list/list'
 
 class Navbar extends React.Component{
   constructor(){
@@ -20,7 +21,7 @@ class Navbar extends React.Component{
           <div className="collapse navbar-collapse" id="myNavbar">
             <ul className="nav navbar-nav navbar-right">
               <li> <Link to='/'>Home</Link></li>
-              <li> <Link to='/poll'>Poll</Link></li>
+              <li> <List /> </li>
               <li> <Link to='/about'>About</Link></li>
             </ul>
           </div>
